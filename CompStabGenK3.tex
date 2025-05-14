@@ -788,13 +788,13 @@ We let \(Z(\mathcal{O}_X) = 0\) and \(Z(\mathbf{k}_x) = -1\).
 \begin{proof}
   It is easy to check that the abelian category \(\mathcal{A}\) is of finite length (Noetherian and Artinian).
   So the slicing is locally finite.
-  Let \(E\) be a vector bundle with no non-trivial sub-bundles, and let \([E] = (r,r-c)\), where \(r = \rk E\) and \(c = c_2(E)\).
-  Then \(Z(E) = c\).
+  Let \(E\) be a vector bundle with no non-trivial sub-bundles, and let \([E] = r[\mathcal{O}_X] + m[\mathbf{k}_x]\).
+  Then \(r = \rk E\) and \(Z(E) = -m\).
   Assume that \(E\) is not isomorphic to \(\mathcal{O}_X\).
   Then \(\Hom(\mathcal{O}_X, E) = \Hom(E, \mathcal{O}_X) = 0\).
-  So \[0 \geq \chi(\mathcal{O}_X, E) = (r,r-c) \cdot (1,1) =  2r-c,\]
-  and hence \(2r \leq c\).
-  As a result, with the standard Euclidean norm on \(\mathcal{N}(X)\), we see that \[Z(E)/\|E\| \geq |c|/|r| \geq 2.\]
+  So \[0 \geq \chi(\mathcal{O}_X, E) = 2r+m,\]
+  and hence \(-m \leq 2r\).
+  As a result, with the standard Euclidean norm on \(\mathcal{N}(X)\), we see that \[|Z(E)|/\|E\| \geq |m|/|r| \geq 2.\]
   So the support property holds.
 
   Finally, note that this lax stability condition is the limit of the stability conditions in \(\mathbf{P}W_0\) as \(Z(\mathcal{O}_{X})/Z(\mathbf{k}_x)\) approaches \(0\).
@@ -843,6 +843,10 @@ If we take a sequence of standard stability conditions in \(W_{-}\) whose mass f
 Therefore, there is no limiting lax stability condition with the mass function \(p\).
 We now make this precise.
 
+Recall that the topology on the space of slicings is induced by the metric \(d\) defined as follows.
+For a slicing \(P\) and non-zero object \(c\), let \(\phi^{\pm}_P(c)\) denote the highest/lowest phase of the \(P\)-HN factors of \(c\).
+Then the distance \(d(P,Q)\) between two slicings \(P\) and \(Q\) is
+\[ d(P,Q) = \operatorname{sup}_{c \neq 0}\left\{ \max(|\phi_{P}^+(c) - \phi_{Q}^+(c)|, |\phi^-_P(c) - \phi^-_Q(c)|)\right\}.\]
 Suppose \(\sigma\) is a lax stability condition that is a limit of a sequence of standard stability conditions \(\sigma_w\) for \(w \in -\mathbf{H}\) with \(m(\sigma) = p\).
 Then, possibly after a rotation and scaling, the central charge of \(\sigma\) must send \(\mathbf{k}_x\) to \(-1\) and \(\mathcal{O}_X\) to \(-1-t\).
 But then
@@ -852,6 +856,26 @@ But this is absurd.
 Indeed, for a standard stability condition \(\sigma_w\), we have
 \[ \inf_{n/m > 1+t} \phi_{\sigma}(I_{n,m}) = \sup_{n/m < 1+t} \phi_{\sigma}(I_{n,m}),\]
 so the same equality must hold in the limit.
+
+In summary, the objects \(\mathbf{k}_x\), \(\mathcal{O}_X\), and \(I_x = T\mathbf{k}_x[-1]\) can become massless in the sense of \cite{bro.pau.plo.ea:22} under a lax stability condition in the limit of standard stability conditions.
+The masses of these three limits are the three vertices of the triangle \(\mathbf{P}W_- = \Delta_0\).
+Other ideal sheaves, or the semi-stable objects \(I_{m,n}\), cannot become massless.
+This distinction is consistent with the density of the phase diagram of standard stability conditions (see the discussion in \cite[\S~12]{bro.pau.plo.ea:22}).
+Let \(\sigma \in W_-\) be a standard stability condition.
+It is easy to check that the classes \(r [\mathcal{O}_X] + n [\mathbf{k}_x]\) that support semi-stable sheaves are precisely
+\((0,n)\) for \(n \geq 1\); \((r,0)\) for \(r \geq 1\); and \((r,n)\) for \(-n \geq r \geq 1\) (see \Cref{fig:semistables}).
+So, on the phase diagram \(\phi(\mathcal{O}_X)\) is an isolated point, \(\phi(\mathbf{k}_x)\) is only aright accumulation point, and \(\phi(I_x)\) is only a left accumulation point.
+The phase diagram is dense on the arc from \(-\phi(\mathbf{k}_x)\) to \(\phi(I_x)\) and its negative.
+\begin{figure}
+  \centering
+\begin{tikzpicture}[thick]
+  \draw[dotted] (0,0) circle (1);
+  \draw [->] (0,0) -- (0,1.5) node[above]{\(\mathcal{O}_{X}\)};
+  \draw [->] (0,0) -- (-2,0) node[above]{\(\mathbf{k}_x\)};
+  \draw [->] (0,0) -- (2,1.5) node[right]{\(I_x\)};
+\end{tikzpicture}
+  \caption{The central charges of semi-stable objects in a standard stability condition with heart \(\operatorname{Coh}X\) are the lattice points in the shaded region.  As a result, the phases are dense in the highlighted region of the unit circle.}
+\end{figure}
 
 
 \section{The \(q\)-mass embedding}\label{sec:qmass}

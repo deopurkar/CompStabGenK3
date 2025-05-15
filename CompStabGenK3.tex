@@ -141,7 +141,7 @@ By \(D^b(X)\) we mean the bounded derived category of the abelian category \(\op
 For a point \(x \in X\), we denote by \(\mathbf{k}_x\) the push-forward to \(X\) of the structure sheaf of \(x\), and call it the \emph{skyscraper sheaf} at \(x\).
 By \(\operatorname{Stab}(X)\), we denote the set of (locally finite) Bridgeland stability conditions on \(D^b(X)\) with a numerical central charge; that is, where the central charge \(Z \colon K(D^b(X)) \to \mathbf{C}\) factors through the Chern character \(\operatorname{ch} \colon K(D^b(X)) \to H^{*}(X, \mathbf{Q})\).
 We let \(\mathbf{P} \operatorname{Stab}(X)\) be the quotient of \(\operatorname{Stab}(X)\) by the standard action of \(\mathbf{C}\), in which \(z = x + i\pi y\) acts by scaling the central charge by \(e^{z}\) and shifting the slicing by \(y\).
-Given a set \(S\), we let \(\mathbf{R}^S\) be the set of functions \(S \to \mathbf{R}\) and \(\mathbf{P}^S\) the projective space \(\left(\mathbf{R}^S - \{0\}\right) / \text{scaling}\).
+Given a set \(S\), we let \(\mathbf{R}^S\) be the space of functions \(S \to \mathbf{R}\) with the product topology and \(\mathbf{P}^S\) the projective space \(\left(\mathbf{R}^S - \{0\}\right) / \text{scaling}\).
 \subsection{Outline}
 In \Cref{sec:stab}, we recall the description of stability conditions on an analytic K3 surface \(X\) with \(\operatorname{Pic} X = 0\).
 In \Cref{sec:semirigid}, we identify the semi-rigid objects of \(D^b(X)\).
@@ -629,61 +629,44 @@ Let \(\overline D \subset \mathbf{P}^S\) be the closure of \(D\).
 Our next goal is to identify the homeomorphism classes of \(\overline D\) and \(D\).
 To do so, it will be useful to work with an auxiliary space, which we now define.
 
-Let \(\overline{\mathbf{R}} = \mathbf{R} \cup \{\pm \infty\}\) be the two point compactification of \(\mathbf{R}\), one at either end, so that \(\overline{\mathbf{R}}\) is homeomorphic to \([0,1]\).
-Our auxiliary space will be \(\overline{\mathbf{R}} \times [0,1]\).
+Let \(I  \subset \mathbf{P^1}\) be the set of \([v:w]\) where \(v, w\) are non-negative real numbers.
+Let \(\overline {\mathbf{R}} = \mathbf{R} \cup \{\pm \infty\}\) be the two point compactification of \(\mathbf{R}\), isomorphic to the closed interval.
+Our auxiliary space will be \(\overline{\mathbf{R}} \times I\).
 
-Let \(\overline \Delta \subset \mathbf{P}^2\) be the set of \([a:b:c]\) such that \(a,b,c\) are non-negative real numbers that satisfy
-\[ a  \leq b+c, \quad b \leq a+c, \quad c \leq a+b.\]
-Define a map
-\[ p \colon [0,1] \times [0,1] \to \mathbf{P}^2\]
-by
-\[ p(u,v) = [uv+(1-v) : 1-uv :v].\]
-It is easy to check that \(p\) has image \(\overline \Delta\), it is injective on \([0,1] \times (0,1]\), and it sends \([0,1] \times \{0\}\) to the point \([1:1:0]\).
+Define the transformation \(T\) on \(\overline{\mathbf{R}} \times I\) by
+\[ T \colon (u,[v,w]) \mapsto (u+1,[v:w]).\]
+Recall that we also denote by \(T\) the action of the spherical twist by \(\mathcal{O}_X\) on \(\mathbf{P} \operatorname{Stab}(X)\) and the rightward shift by \(1\) on \(\mathbf{P}^S\).
+(We intentionally use the same letter \(T\) to denote all related maps.)
 
-For \(n \in \mathbf{Z}\), let \(t_{n} \colon \overline D \to \mathbf{P}^S\) be the map defined by
-\[ t_n \colon [a:b:c] \mapsto [\cdots : a+c :a :b:b+c: \cdots],\]
-where \(a\) is at index \(n\).
-We define
-\[ \pi \colon \mathbf{R} \times [0,1] \to \mathbf{P}^S\]
-as follows.
-Write \(x \in \mathbf{R}\) as \(x = n + u\), where \(n \in \mathbf{Z}\) and \(u \in [0,1)\).
+We define a \(T\)-equivariant parametrisation
+\[ \pi \colon \overline{\mathbf{R}} \times I \to \overline D.\]
+For \(n \in \mathbf{Z}\), set
+\[ P_n = (\cdots , 2 , 1,  0 , 1 , 2 , \cdots) \in \mathbf{R}^S,\]
+where the \(0\) is at index \(n\).
+Note that \(p_n = T^np_0\).
 Set
-\[ \pi (x,v) = t_n \circ p (u,v).\]
-Let \(T \colon \mathbf{R} \times [0,1] \to \mathbf{R} \times [0,1]\) be the map \(T(u,v) = (u+1,v)\).
-Recall that \(T \colon \mathbf{P}^S \to \mathbf{P}^S\) is also the rightward shift of the homogeneous coordinates (we are intentionally using the same letter \(T\) for all the related maps).
-Then, by definition, we have
-\[ \pi \circ T = T \circ \pi.\]
-\begin{proposition}\label{prop:pi-interior}
-  The map \(\pi \colon \mathbf{R} \times [0,1] \to \mathbf{P}^{S}\) is continuous.
-  It maps \((n,n+1) \times (0,1)\) homeomorphically to the open triangle \(\Delta_n \subset \mathbf{P}^S\) and \(\{n\} \times (0,1)\) homeomorphically to the interval \(I_n\).
-\end{proposition}
-\begin{proof}
-  We first check continuity.
-  Continuity at \((x,v)\) is clear for \(x \not \in \mathbf{Z}\).
-  For \(x = n \in \mathbf{Z}\), it suffices to check that
-  \[ t_n \circ p(0,v) = t_{n-1} \circ p(1,v),\]
-  which we now do.
-  The left hand side is
-  \[ t_n[1-v:1:v] = [\cdots : 1+v : 1 : 1-v  : 1 : 1 + v : \cdots ],\]
-  where the \((1-v)\) is at index \(n\).
-  The right hand side is
-  \[ t_{n-1}[1:1-v:v] = [\cdots : 1 + v : 1 : 1-v : 1 : 1+v : \cdots ],\]
-  where the \((1-v)\) is at index \(n\).
-  We see that the two are equal.
-
-  By the \(T\)-equivariance of \(\pi\), it suffices to check the homeomorphism assertions for \(n = 0\).
-  It is easy to check that \((0,1) \times (0,1) \to \mathbf{P}^2\) is a homeomorphism onto the triangle \(\Delta \subset \mathbf{P}^2\) consisting of \([a:b:c]\), where \(a,b,c\) are positive real numbers satisfying the strict triangle inequalities.
-  Since \(t_0 \colon \Delta \to \Delta_0\) is a homeomorphism, the first statement follows.
-  The map \(\pi\) on \(\{0\} \times (0,1)\) is given by \[(0,v) \mapsto [\cdots :1+v : 1 :1-v:1:1+v:\cdots],\] where \((1-v)\) is at index 0.
-  Evidently, the map is a homeomorphism to the interval \(I_0\).
-\end{proof}
-We extend \(\pi \colon \mathbf{R} \times [0,1] \to \mathbf{P}^{S}\) to a map
-\[ \pi \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\]
-by setting
-\[ \pi (\pm \infty, v) = [\cdots : 1 : 1 : 1 : \cdots ].\]
+\[ Q = (\cdots , 1, 1, 1, \cdots ) \in \mathbf{R}^S.\]
+Consider the map \(\pi \colon [0,1] \times I \to \mathbf{P}^S\) defined by
+\[ \pi(u,[v:w]) = (1-u)(wQ + vP_0) + u (wQ + vP_1).\]
+Note that for  \(u = 0\) (resp. \(u = 1\)), the map \(\pi\) is a homeomorphism onto the closure of \(I_0\) (resp. \(I_1\)), which are the two sides of the triangle \(\Delta_0\).
+For \(0 < u < 1\), the map \(\pi\) linearly interpolates between the two end-points \(\pi(0,[v:w])\) and \(\pi(1,[v:w])\), and hence its image is \(\overline \Delta_0\).
+In fact, it is easy to check that the map
+\[ \pi \colon [0,1] \times \left(I - \{[0:1]\}\right) \to \overline \Delta_0 - \{[\cdots 1 : 1: 1: \cdots]\}\]
+is a homeomorphism, and \(\pi\) sends the entire segment \([0,1] \times [0:1]\) to the point \([\cdots 1 : 1: 1: \cdots]\).
+Note that, with the \(T\) actions as before, we have
+\[ T \pi(0,[v:w]) = \pi T(0,[v:w]).\]
+Thus, \(\pi\) extends to a unique \(T\)-equivariant continuous map
+\[ \pi \colon \mathbf{R} \times I \to \mathbf{P}^S.\]
+Explicitly, for \(x = n + u\), where \(n \in \mathbf{Z}\) and \(u \in [0,1)\), we have
+\[ \pi(x,[v:w]) = w Q + (1-u) v P_n + uvP_{n+1}.\]
+Note that in \(\mathbf{R}^S\) we have
+\[ \lim_{n \to \pm\infty} \frac{1}{n}P_n = (\cdots, 1, 1, 1, \cdots).\]
+Extend \(\pi\) to \(\{\pm \infty\} \times I\) by setting
+\[ \pi(\pm \infty, [v:w]) = [\cdots : 1 : 1 : 1 : \cdots].\]
+Then, using the limit computation above, it is easy to check that \(\pi_q\) is continuous.
 \begin{theorem}\label{prop:pi}
-  The map \(\pi \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\) is continuous.
-  It sends the set \[C = \{\pm \infty\} \times [0,1] \cup \overline{\mathbf{R}} \times \{0\}\]
+  The map \(\pi \colon \overline{\mathbf{R}} \times I \to \mathbf{P}^S\) is continuous.
+  It sends the set \[C = \{\pm \infty\} \times I \cup \overline{\mathbf{R}} \times \{[0:1]\}\]
   to the point \([\cdots: 1: 1: 1: \cdots]\).
   Let \(\overline{\mathbf{R}} \times [0,1] \to B\) be the contraction of \(C\) to a point.
   Then the induced map \(\pi \colon B \to \mathbf{P}^S\) is a homeomorphism onto \(\overline D = \overline{m(\mathbf{P}\operatorname{Stab}(X))}\).
@@ -691,29 +674,12 @@ by setting
 Note that \(B\) is homeomorphic to a closed disk.
 See \Cref{fig:accordion} for a sketch.
 \begin{proof}
-  Let us check continuity at \((\infty, v)\).
-  Fix a positive integer \(n\).
-  Consider the homogeneous coordinates of \(\mathbf{P}^{S}\) with indices \(-n, \cdots, n\).
-  Let us examine these homogeneous coordinates of \(\pi(t,y)\), where \(t\) is large.
-  Say \(t = N + u\), where \(N > n\).
-  Then \(p(u,y) = [uy+(1-y) : 1-uy: y]\).
-  For \(-n \leq i \leq n\), the \(i\)-th index of \(\pi(u,y)\), which by definition is the \(i\)-th index of \(t_N \circ p(u,y)\) is
-  \[ \pi(u,y)_i = uy + (1-y) + (N-i) y.\]
-  Observe that as \(N \to \infty\), we have
-  \[ [uy + (1-y) + (N+n) y : \cdots : uy + (1-y) + (N-n)y] \mapsto [1:\cdots:1],\]
-  uniformly in \((u,y) \in [0,1] \times [0,1]\).
-  It follows that \(\pi\) is continuous at \((\infty, v)\).
-  We check similarly that it is continuous at \((-\infty, v)\).
-
-  From \Cref{prop:pi-interior}, we know that \(\pi \colon \mathbf{R} \times (0,1) \to D\)  is a bijection.
-  We note that \(\pi\) maps \(C\) to the point \([\cdots:1 : 1: 1: \cdots]\), which is not in \(D\).
-  Finally, for \(u \in [0,1]\), we have
-  \[ \pi(u,1) = [u:1-u:1] = [\cdots:2-u:1-u:u:u+1:u+2:\cdots].\]
-  Observe that this is the third side of the closure of \(\Delta_0 \subset \mathbf{P}^S\), other than the (closures) of \(I_0\) and \(I_1\).
-  Therefore, we see that \(\pi\) is injective on \(\mathbf{R} \times \{1\}\), and maps it outside of \(D\).
-  We conclude that \(\pi \colon B \to \mathbf{P}^S\) is a bijection onto its image.
-  Since \(B\) is compact, it is a homeomorphism onto its image.
-  It maps the interior of \(B = \mathbf{R} \times (0,1)\) to \(D\), and hence the image must be the closure \(\overline D\).
+  We have seen that \(\pi\) is continuous.
+  It is easy to check that it is injective on the complement of \(C\), and its image on the complement of \(C\) does not include the point \([\cdots: 1:1:1: \cdots]\).
+  It evidently sends all points of \(C\) to \([\cdots: 1:1:1: \cdots]\).
+  So it induces an injective map \(B \to \mathbf{P}^S\).
+  By construction, \(\pi\) maps the interior of \(\overline{\mathbf{R}} \times I\) to \(D\).
+  So the image of \(\pi\) must be \(\overline D\).
 \end{proof}
 
 \begin{figure}[ht]
@@ -754,12 +720,13 @@ See \Cref{fig:accordion} for a sketch.
 
 \subsection{Points of the boundary}\label{sec:boundary}
 Observe that \(\overline D\) contains the point \(\textcolor{red}{\bullet} = [\cdots :1:1:1: \cdots]\).
-This is the common vertex (drawn in red in \Cref{fig:accordion}) of all the triangles that tesselate \(\overline D\).
+This is the common vertex (drawn in red in \Cref{fig:accordion}) of all the triangles that tile \(\overline D\).
 It is the unique \(T\)-invariant point of \(\overline D\).
 This point is precisely the projectivised hom function \(\hom(\mathcal{O}_X,-)\), whose value on \(T^n \mathbf{k}_x\) for any \(n \in \mathbf{Z}\) is
 \[ \dim \Hom^{*}(\mathcal{O}_{X}, T^n\mathbf{k}_x) = 1.\]
 The fact that \(\textcolor{red}{\bullet}\) is in the boundary follows from the following more general fact.
 \begin{theorem}[{\cite[Corollary~4.13]{bap.deo.lic:20}}]
+  \label{thm:qhom}
   Let \(a\) be a spherical object of a triangulated category \(\mathcal{C}\), and assume that it is a stable object of a stability condition \(\sigma\).
   Let \(S\) be a set of objects of \(\mathcal{C}\) such that no object in \(S\) has an endomorphism of negative degree.
   For simplicity, also assume that no shift of \(a\) is in \(S\).
@@ -793,7 +760,7 @@ We let \(Z(\mathcal{O}_X) = 0\) and \(Z(\mathbf{k}_x) = -1\).
   Assume that \(E\) is not isomorphic to \(\mathcal{O}_X\).
   Then \(\Hom(\mathcal{O}_X, E) = \Hom(E, \mathcal{O}_X) = 0\).
   So \[0 \geq \chi(\mathcal{O}_X, E) = 2r+m,\]
-  and hence \(-m \leq 2r\).
+  and hence \(m \leq -2r\).
   As a result, with the standard Euclidean norm on \(\mathcal{N}(X)\), we see that \[|Z(E)|/\|E\| \geq |m|/|r| \geq 2.\]
   So the support property holds.
 
@@ -802,8 +769,8 @@ We let \(Z(\mathcal{O}_X) = 0\) and \(Z(\mathbf{k}_x) = -1\).
 \end{proof}
 
 Consider the points of \(\overline D\) that are the vertices of the tiling triangles other than the vertex \(\textcolor{red}{\bullet}\).
-They form a single \(T\)-orbit, so it suffices to consider one of them, say \(v_0 = [\cdots : 2:1:0:1:2: \cdots]\), with the \(0\) at index \(0\).
-Note that this is the common vertex, other than the \(\textcolor{red}{\bullet}\), of the triangles \(\mathbf{P}W_{+} \cong \Delta_{-1}\) and \(\mathbf{P}W_- = \Delta_0\).
+They form a single \(T\)-orbit, so it suffices to focus on one of them, say \(v_0 = [\cdots : 2:1:0:1:2: \cdots]\), with the \(0\) at index \(0\).
+Note that this is the common vertex, other than \(\textcolor{red}{\bullet}\), of the triangles \(\mathbf{P}W_{+} \cong \Delta_{-1}\) and \(\mathbf{P}W_- = \Delta_0\).
 This is the mass function of a different lax stability condition.
 Let \(P\) be the same slicing as before, and set \(Z(\mathcal{O}_X) = 1\) and \(Z(\mathbf{k}_x) = 0\).
 \begin{proposition}\label{prop:v0}
@@ -835,10 +802,9 @@ Let \(\sigma = \sigma_w\) be a standard stability condition, for some \(w \in -\
 Let \(I_{m,n}\) be the kernel of a generic morphism from \(\mathcal{O}_X^{\oplus m}\) to the structure sheaf of \(n\)-points.
 Then it is easy to check that \(I_{m,n}\) is \(\sigma\)-stable.
 
-Fix a point \(p \in \overline D\) of the form
+Fix a point \(p \in \overline D\) on the line segment joining \(v_0\) and \(v_1\).
+Then, for some \(t > 0\), we can write
 \[ p = [ \cdots : 2 + t: 1: t : 1+2t : \cdots].\]
-for some \(t > 0\).
-Then \(p\) is on the line segment joining \(v_0\) and \(v_1\).
 If we take a sequence of standard stability conditions in \(W_{-}\) whose mass function approaches \(p\), their slicings do not converge.
 Therefore, there is no limiting lax stability condition with the mass function \(p\).
 We now make this precise.
@@ -857,24 +823,34 @@ Indeed, for a standard stability condition \(\sigma_w\), we have
 \[ \inf_{n/m > 1+t} \phi_{\sigma}(I_{n,m}) = \sup_{n/m < 1+t} \phi_{\sigma}(I_{n,m}),\]
 so the same equality must hold in the limit.
 
-In summary, the objects \(\mathbf{k}_x\), \(\mathcal{O}_X\), and \(I_x = T\mathbf{k}_x[-1]\) can become massless in the sense of \cite{bro.pau.plo.ea:22} under a lax stability condition in the limit of standard stability conditions.
-The masses of these three limits are the three vertices of the triangle \(\mathbf{P}W_- = \Delta_0\).
-Other ideal sheaves, or the semi-stable objects \(I_{m,n}\), cannot become massless.
-This distinction is consistent with the density of the phase diagram of standard stability conditions (see the discussion in \cite[\S~12]{bro.pau.plo.ea:22}).
+We thus see that the objects \(\mathbf{k}_x\), \(\mathcal{O}_X\), and \(I_x = T\mathbf{k}_x[-1]\) can become massless in a lax stability condition.
+These three possibilities give the three vertices of the triangle \(\mathbf{P}W_- = \Delta_0\).
+In contrast, other semi-stable sheaves cannot become massless.
+This distinction is consistent with the density of the phase diagram (see the discussion in \cite[\S~12]{bro.pau.plo.ea:22}).
 Let \(\sigma \in W_-\) be a standard stability condition.
 It is easy to check that the classes \(r [\mathcal{O}_X] + n [\mathbf{k}_x]\) that support semi-stable sheaves are precisely
-\((0,n)\) for \(n \geq 1\); \((r,0)\) for \(r \geq 1\); and \((r,n)\) for \(-n \geq r \geq 1\) (see \Cref{fig:semistables}).
-So, on the phase diagram \(\phi(\mathcal{O}_X)\) is an isolated point, \(\phi(\mathbf{k}_x)\) is only aright accumulation point, and \(\phi(I_x)\) is only a left accumulation point.
-The phase diagram is dense on the arc from \(-\phi(\mathbf{k}_x)\) to \(\phi(I_x)\) and its negative.
+\(r = 0\) and \(n \geq 1\); or \(r \geq 1\) and \(n = 0\); or \(r \geq 1\) and \(-n \geq r\) (see \Cref{fig:semistables}).
+Consider the phase diagram---the possible phases of semi-stable objects plotted on the unit circle.
+There, \(\mathcal{O}_X\) is an isolated point, \(\mathbf{k}_x\) is a right accumulation point, and \(I_x\) is a left accumulation point.
+At all points on the arc from \(\mathbf{k}_x[-1]\) to \(I_x\) (and its negative), the phase diagram is dense in the circle.
+By the continuity argument above, the central charge of a lax stability condition cannot vanish at a point where the phase diagram is dense.
 \begin{figure}
   \centering
-\begin{tikzpicture}[thick]
+  \begin{tikzpicture}[thick]
+  \draw[draw=none, fill=gray, opacity=0.2] (0,0) -- (3,0) arc (0:37:3) (0,0);
+  \draw[draw=none, fill=gray, opacity=0.2] (0,0) -- (-3,0) arc (180:217:3) (0,0);
   \draw[dotted] (0,0) circle (1);
+  \draw[blue] (1,0) arc (0:37:1);
+  \draw[blue] (-1,0) arc (180:217:1);
   \draw [->] (0,0) -- (0,1.5) node[above]{\(\mathcal{O}_{X}\)};
+  \draw [->] (0,0) -- (0,-1.5);
   \draw [->] (0,0) -- (-2,0) node[above]{\(\mathbf{k}_x\)};
+  \draw [->] (0,0) -- (2,0);
   \draw [->] (0,0) -- (2,1.5) node[right]{\(I_x\)};
+  \draw [->] (0,0) -- (-2,-1.5);
 \end{tikzpicture}
-  \caption{The central charges of semi-stable objects in a standard stability condition with heart \(\operatorname{Coh}X\) are the lattice points in the shaded region.  As a result, the phases are dense in the highlighted region of the unit circle.}
+\caption{The central charges of semi-stable objects in a standard stability condition with heart \(\operatorname{Coh}X\) are the lattice points in the shaded region.  As a result, the phases are dense in the blue region of the unit circle.}
+\label{fig:semistables}
 \end{figure}
 
 
@@ -915,14 +891,8 @@ Then the map \( \mathbf{P} W^- \to \Delta\)
 that takes \(\sigma\) to \([m_{q,\sigma}(\mathbf{k}_x):m_{q,\sigma}(T\mathbf{k}_x): m_{q,\sigma}(\mathcal{O}_X)]\)
 is a homeomorphism.
 The proof is analogous to the proof of \Cref{prop:triangle0}~(3), but uses the \(q\)-analogue of the cosine rule \cite[Lemma~5.2]{bap.bec.lic:22}.
-Let \(t_n \colon \Delta \to \mathbf{P}^S\) be the map
-\[ [a:b:c] \mapsto [ \cdots :a + cq+cq^2 : a + cq :a: b: b + c : b + c + c q^{-1} : \cdots ],\]
-where the \(a\) is at index \(n\).
-Set \(\Delta_n = t_n(\Delta)\).
-Then \(t_n \colon \Delta \to \Delta_n\) is a homeomorphism.
-So, the \(q\)-mass map \(m_{q} \colon T^n\mathbf{P}W_- \to \Delta_n\) is a homeomorphism.
 
-Now consider \(\sigma \in \mathbf{P}W_0\).
+Consider \(\sigma \in \mathbf{P}W_0\).
 With \(a,b,c\) as before, we have \(b = a + qc\).
 From the \(\sigma\)-HN filtration of \(T^n\mathbf{k}_x\) from \Cref{prop:HNII}, we get
 \[ m_{q, \sigma} \colon T^n \mathbf{k}_x \mapsto
@@ -946,29 +916,45 @@ Let \(D_q \in \mathbf{P}^S\) be the union of \(\Delta_n\) and \(I_n\) for \(n \i
 The proof is analogous to the proof of \Cref{thm:homeo}.
 
 We now identify the homeomorphism type of \(D_q\) and its closure \(\overline D_q\).
-The basic technique is as before---by parametrising \(\overline D_q\) by a compactified infinite strip of squares \(\overline {\mathbf{R}} \times [0,1]\).
+The basic technique is as before---by parametrising \(\overline D_q\) by a compactified infinite strip of squares.
 But the resulting picture is slightly different.
 Without loss of generality, assume \(q > 1\).
 
-Our goal is to define a \(T\)-equivariant continuous map
-\[ \pi_q \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\]
-whose image is \(\overline D_q\).
+Recall that \(I  \subset \mathbf{P^1}\) is the set of \([v:w]\) where \(v, w\) are non-negative real numbers.
+Let \(\overline {\mathbf{R}} = \mathbf{R} \cup \{\pm \infty\}\) be the two point compactification of \(\mathbf{R}\).
+Define the transformation \(T\) on \(\overline{\mathbf{R}} \times I\) by
+\[ T \colon (u,[v,w]) \mapsto (u+1,[qv:w]).\]
+Recall that we also denote by \(T\) the action of the spherical twist by \(\mathcal{O}_X\) on \(\mathbf{P} \operatorname{Stab}(X)\) and the rightward shift by \(1\) on \(\mathbf{P}^S\).
 
-\textcolor{red}{The \(q\)-analogues \(p_q\) and \(\pi_q\) below are incorrect.  I believe \Cref{prop:q-pi} is still correct with the corrected \(p_q\) and \(\pi_q\).}
-
-As before, we begin by defining a map
-\[ p_{q} \colon [0,1] \times [0,1] \to \mathbf{P}^2\]
-by \[p_q (u,v) = [quv + (1-v): 1-uv: q^{-1}v].\]
-We use it to define
-\[ \pi_q \colon \mathbf{R} \times [0,1] \to \mathbf{P}^S\]
-by setting
-\[ \pi_q(n+u,v) = t_n \circ p_q(u,v)\]
-for \(n \in \mathbf{Z}\) and \(u \in [0,1)\).
-Set \(\delta = 1 + q^{-1} + q^{-2} + \cdots\).
-Extend \(\pi_q\) to \(\pi_q \colon \operatorname{\mathbf{R}} \times [0,1] \to \mathbf{P}^{S}\) by setting
-\[ \pi_q(-\infty, v) = [\cdots : 1 : 1 : 1: \cdots],\]
+We define a \(T\)-equivariant parametrisation
+\[ \pi_q \colon \overline{\mathbf{R}} \times I \to \overline D_q,\]
+which is a \(q\)-analogue of the parametrisation \(\pi\) from \Cref{prop:pi}.
+For \(n \in \mathbf{Z}\), set
+\[ P_n = (\cdots , 1+q , 1,  0 , 1 , 1+q^{-1} , \cdots) \in \mathbf{R}^S,\]
+where the \(0\) is at index \(n\).
+Note that \(P_n = T^nP_0\).
+Set
+\[ Q = (\cdots , 1, 1, 1, \cdots ) \in \mathbf{R}^S.\]
+Consider the map \(\pi_{q} \colon [0,1] \times I \to \mathbf{P}^S\) defined by
+\[ \pi_q(u,[v:w]) = (1-u)(wQ + vP_0) + u (wQ + q^{-1}vP_1).\]
+Note that for \(u = 0\) (resp. \(u = 1\)), the map \(\pi_q\) is a homeomorphism onto the closure of \(I_0\) (resp. \(I_1\)), which are the two sides of the triangle \(\Delta_0\).
+For \(0 < u < 1\), the map \(\pi_q\) linearly interpolates between the two end-points \(\pi_q(0,[v:w])\) and \(\pi_q(1,[v:w])\), and hence its image is \(\overline \Delta_0\).
+Also observe that \(\pi_q(u,[0:w]) = Q\).
+Furthermore, with the \(T\) actions as before, we have
+\[ T \pi_q(0,[v:w]) = \pi_q T(0,[v:w]).\]
+Thus, \(\pi_q\) extends to a unique \(T\)-equivariant continuous map
+\[ \pi_q \colon \mathbf{R} \times I \to \mathbf{P}^S.\]
+Explicitly, for \(x = n + u\), where \(n \in \mathbf{Z}\) and \(u \in [0,1)\), we have
+\[ \pi_q(x,[v:w]) = w Q + (1-u) q^{-n}v P_n + u q^{-n-1}vP_{n+1}.\]
+Let \(\delta = 1 + q^{-1} + q^{-2} + \cdots\).
+Then, in \(\mathbf{R}^S\) we have
+\[ \lim_{n \to -\infty} P_n = (\dots, \delta, \delta, \delta, \dots) \text{ and } \lim_{n \to \infty}q^{-n}P_n = (\dots, q \delta,\delta ,q^{-1} \delta,\dots).\]
+(On the right hand side of the last equation, the \(\delta\) is at index \(-1\).)
+Extend \(\overline \pi_q\) to \(\{\pm \infty\} \times I\) by setting
+\[ \pi_q(-\infty, [v:w]) = [\cdots : 1 : 1 : 1 : \cdots],\]
 and
-\[ \pi_q(+\infty, v) = [\cdots : (1-v) + v q^{1} \delta : (1-v) + v\delta : (1-v) + v q^{-1}\delta : \cdots].\]
+\[ \pi_q(+\infty, [v:w]) = w [\cdots : 1 : 1 : 1 : \cdots] + v [\cdots : q : 1 : q^{-1} : \cdots].\]
+Using the limit computation above, it follows that this extension is continuous.
 \begin{theorem}\label{prop:q-pi}
   The map \(\pi_{q} \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\) is continuous.
   It sends the set \[C = \{- \infty\} \times [0,1] \cup \overline{\mathbf{R}} \times \{0\}\]
@@ -1023,6 +1009,8 @@ The blue end-point is the point \(\textcolor{blue}{\bullet} = [\cdots : q : 1 : 
 It is the \(q\)-hom function \(\hom_q(\mathcal{O}_X, -)\), whose value on \(T^n\mathbf{k}_x\) is
 \[ \dim_q \Hom^{*}(\mathcal{O}_X, T^n \mathbf{k}_x) = q^{-n}.\]
 (By definition, \(\dim_q\) of the graded vector space \(\mathbf{C}[m]\) is \(q^m\)).
+Again, the fact that \(\hom_q(\mathcal{O}_X,-)\) appears in the closure of the \(q\)-mass embedding of the stability manifold is a reflection of a general theorem---the \(q\)-analogue of \Cref{thm:qhom} (see \cite[Corollary~4.13]{bap.deo.lic:20}).
+
 Note that \(\textcolor{blue}{\bullet}\) is not in the closure of the standard stability conditions \(\mathbf{P}W\), nor is it in the closure of \(T^n \mathbf{P}W\) for any fixed \(n\).
 To reach \(\textcolor{blue}{\bullet}\), we must traverse an infinite sequence of hearts.
 It is easy to see that it is not the \(q\)-mass function of a lax stability condition.

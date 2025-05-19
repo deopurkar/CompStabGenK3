@@ -7,4 +7,4 @@ See [[file:CompStabGenK3.pdf]] for the compiled PDF.
 - [2025-05-15 Thu] Add phase diagram
 - [2025-05-15 Thu] Add warning about q-analog formulas
 - [2025-05-16 Fri] Fix q-analog formulas
-  
+- [2025-05-19 Mon] Fix an erroneous proof of the support property and explain why the property in fact fails.

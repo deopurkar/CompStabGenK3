@@ -4,3 +4,7 @@ See [[file:CompStabGenK3.pdf]] for the compiled PDF.
 
 * Changelog
 - [2025-05-13 Tue] Draft
+- [2025-05-15 Thu] Add phase diagram
+- [2025-05-15 Thu] Add warning about q-analog formulas
+- [2025-05-16 Fri] Fix q-analog formulas
+  

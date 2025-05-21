@@ -1,7 +1,7 @@
 \documentclass{amsart}
 \title[Compactified stability manifold of a generic K3]{The Thurston compactification of the stability manifold of a generic analytic K3 surface}
 \author{Anand Deopurkar}
-
+\address{Mathematical Sciences Institute, Australian National University, Ngunnawal and Ngambri Country, Canberra, ACT, Australia}
 \usepackage[margin=3cm]{geometry}
 \usepackage{hyperref}
 \usepackage{cleveref}
@@ -14,11 +14,12 @@
 \input{macros}
 
 \begin{document}
-\maketitle
 \begin{abstract}
   Let \(X\) be an analytic K3 surface with \(\operatorname{Pic} X = 0\).
   We describe the closure of the Bridgeland stability manifold of \(X\) obtained using the masses of semi-rigid objects.
 \end{abstract}
+
+\maketitle
 \section{Introduction}
 Associated to a triangulated category \(\mathcal{C}\) is the complex manifold \(\operatorname{Stab}(\mathcal{C})\) whose points are the Bridgeland stability conditions on \(\mathcal{C}\) \cite{bri:07}.
 Understanding the global geometry of \(\operatorname{Stab}(\mathcal{C})\) is an important question with far-reaching applications.
@@ -46,7 +47,7 @@ The proposed compactification is the closure of the image of \(m\).
 \end{theorem}
 See \Cref{fig:disk} for an illustration of the compactified stability space.
 The boundary contains a distinguished point represented by the function \(\hom(\mathcal{O}_X,-)\) (red point in \Cref{fig:disk}).
-This is the mass functions of a lax stability condition in the sense of \cite{bro.pau.plo.ea:22}.
+This is also the mass function of a lax stability condition in the sense of \cite{bro.pau.plo.ea:22}.
 The other vertices are mass functions of lax pre-stability conditions.
 The other boundary points do not have such interpretation.
 \begin{figure}[ht]
@@ -63,7 +64,7 @@ The other boundary points do not have such interpretation.
       \draw (-80:1) circle (0.01) (-70:1) circle (0.01) (-60:1) circle (0.01);
       \draw [red, fill] (0,-1) circle (0.05);
     \end{tikzpicture}
-    \caption{For an analytic K3 surface \(X\) with \(\operatorname{Pic}(X)= 0\), the compactified \(\mathbf{P} \operatorname{Stab}(X)\) is a closed 2-ball, tiled by the translates of a triangle by the action of the spherical twist in \(\mathcal{O}_X\).  A distinguished point (red) in the boundary corresponds to the function \(\hom(\mathcal{O}_X, -)\).}
+    \caption{For an analytic K3 surface \(X\) with \(\operatorname{Pic}(X)= 0\), the compactified \(\mathbf{P} \operatorname{Stab}(X)\) is a closed disk, tiled by the translates of a triangle by the action of the spherical twist in \(\mathcal{O}_X\).  A distinguished point (red) in the boundary corresponds to the function \(\hom(\mathcal{O}_X, -)\).}
     \label{fig:disk}
   \end{figure}
 
@@ -95,7 +96,7 @@ The discussion of the points in the boundary is in \Cref{sec:boundary}.
     \label{fig:q-disk}
   \end{figure}
 
-  For \(q = 1\), the distinguished red point in the boundary has two interpretations: one as the hom function \(\hom(\mathcal{O}_X, -)\) and the second as the mass function of a lax stability condition \(\sigma\) in which \(\mathcal{O}_X\) is massless.
+  For \(q = 1\), the distinguished point in the boundary has two interpretations: one as the hom function \(\hom(\mathcal{O}_X, -)\) and the second as the mass function of a lax stability condition \(\sigma\) in which \(\mathcal{O}_X\) is massless.
   For \(q \neq 1\), the two interpretations diverge.
   The \(q\)-hom function \(\hom_q(\mathcal{O}_X,-)\) yields the blue end-point in \Cref{fig:q-disk} and the \(q\)-mass function \(m_q(\sigma)\) yields the red end-point.
   
@@ -128,17 +129,17 @@ The discussion of the points in the boundary is in \Cref{sec:boundary}.
   \end{figure}
   
   
-In the course of the proof of the main theorem, we also characterise all semi-rigid objects of \(D^b \operatorname{Coh} (X)\).
+In the course of the proof of the main theorem, we characterise all semi-rigid objects of \(D^b \operatorname{Coh} (X)\).
 Up to twists by \(\mathcal{O}_X\) and homological shifts, the only such objects are the skyscraper sheaves \(\mathbf{k}_x\) (\Cref{prop:semirigids}).
 
 There are a few other cases where the Thurston compactification of the stability manifold has been completely described.
 These include: the 2-Calabi--Yau categories associated to quivers of rank 2 \cite{bap.deo.lic:20} and the derived categories of coherent sheaves on algebraic curves \cite{kik.kos.ouc:24}.
 In \cite{kik.kos.ouc:25} the authors prove that for any (algebraic) K3 surface \(X\), taking \(S\) to be the set of spherical objects gives an injective map \(m \colon \mathbf{P} \operatorname{Stab}(X) \to \mathbf{P}^S\).
 Understanding its image and its closure is an important goal.
-The case of non-algebraic K3s treated here is a step towards it.
+The case of non-algebraic K3s treated here may be seen as a step towards it.
 
 \subsection{Conventions}
-An \emph{analytic K3 surface} is a connected, simply-connected, and compact complex manifold \(X\) of dimension 2 with \(h^1(\mathcal{O}_X) = 0\).
+An \emph{analytic K3 surface} is a connected, simply-connected, compact complex manifold \(X\) of dimension 2 with \(h^1(\mathcal{O}_X) = 0\).
 By \(D^b(X)\) we mean the bounded derived category of the abelian category \(\operatorname{Coh}(X)\) of coherent sheaves on \(X\), as studied in \cite{huy.mac.ste:08}.
 For a point \(x \in X\), we denote by \(\mathbf{k}_x\) the push-forward to \(X\) of the structure sheaf of \(x\), and call it the \emph{skyscraper sheaf} at \(x\).
 By \(\operatorname{Stab}(X)\), we denote the set of (locally finite) Bridgeland stability conditions on \(D^b(X)\) with a numerical central charge; that is, where the central charge \(Z \colon K(D^b(X)) \to \mathbf{C}\) factors through the Chern character \(\operatorname{ch} \colon K(D^b(X)) \to H^{*}(X, \mathbf{Q})\).
@@ -155,7 +156,7 @@ We do not include the definitions and the basic properties of stability conditio
 This work is a part of a larger project with Asilata Bapat and Anthony Licata.
 I am deeply grateful to have them as collaborators.
 I thank Ziqi Liu, Emanuele Macri, Laura Pertusi, and Paolo Stellari for discussions related to this project.
-I was supported by the \emph{Australian Research Council} award \texttt{DP240101084}.
+I was supported by the Australian Research Council award \texttt{DP240101084}.
 
 \section{Stability conditions on generic K3 surfaces}\label{sec:stab}
 Throughout, fix an analytic K3 surface \(X\) with \(\operatorname{Pic} X = 0\).
@@ -260,7 +261,7 @@ Recall that since, up to shifts, \(\mathcal{O}_X\) is the only spherical object,
   We have \(T W_+ = W_{-}\) and \(T^{-1} W_- = W_{+}\).
 \end{proposition}
 \begin{proof}
-  We prove that for a standard \(\sigma \in W_-\), we have \(T(\sigma) \in W_{+}\), and for a standard \(\sigma \in W_{+}\), we have \(T^{-1}(\sigma) \in W_-\).
+  We prove that for a standard \(\sigma \in W_-\), we have \(T^{-1}(\sigma) \in W_{+}\), and for a standard \(\sigma \in W_{+}\), we have \(T(\sigma) \in W_-\).
   Then the proposition follows.
   
   Take a standard \(\sigma \in W_-\)  and let us prove that \(T^{-1}(\sigma) \in W_{+}\).
@@ -284,7 +285,7 @@ Recall that since, up to shifts, \(\mathcal{O}_X\) is the only spherical object,
 \end{proof}
 
 
-We now turn to the topology of the set of standard stability conditions and the stability conditios in \(W\).
+We now turn to the topology of the set of standard stability conditions and the stability conditions in \(W\).
 Let \(H \subset \operatorname{Stab}(X)\) be the set of standard stability conditions.
 Let \(R = \mathbf{C} \setminus \mathbf{R}_{\geq 0}\).
 We have a map \(R \to H\) given by \(z \mapsto \sigma_z\).
@@ -366,19 +367,32 @@ If \(\sigma\) is clear from the context, we omit the subscript.
   Let \(F \in D^b(X)\) be a semi-rigid object.
   There exists a non-negative integer \(n\) such that \(T^nF\) is \(\sigma\)-semi-stable.
 \end{lemma}
-\begin{proof}
+The proof relies on a result from \cite{bap.deo.lic:23} that allows us to reduce the phase spread by applying a spherical twist.
+For the convenience of the reader, we recall the statement.
+The statement applies to a triangulated category \(\mathcal{C}\), linear of finite type over a field, with a dg enhancement, equipped with a stability condition \(\tau\).
+By \(\phi^{\pm}\) we denote the highest/lowest phases in the HN filtration and by \(T_{x}\) the spherical twist with respect to a spherical object \(x\).
+\begin{theorem}[{\cite[Theorem~3.5]{bap.deo.lic:23}}]
+  \label{thm:algorithm}
+  Let \(x\) be a \(\tau\)-stable spherical object of \(\mathcal{C}\), and assume that it is the only \(\tau\)-stable object of its phase.
+  Let \(y\) be an object of \(\mathcal{C}\) with no endomorphisms of negative degree.
+  Suppose \(\phi(x) = \phi^+(y)\) (resp. \(\phi^-(y)\)) and let \(y' = T_x(y)\) (resp. \(T^{-1}_x(y)\)).
+  If \(\phi^+(y) - \phi^-(y) > 0\), then
+  \[ \phi^+(y') - \phi^-(y') < \phi^+(y) - \phi^-(y).\]
+\end{theorem}
+We now turn to the proof of \Cref{lem:phasereduction}.
+\begin{proof}[Proof of \Cref{lem:phasereduction}]
   Since \(F\) is semi-rigid, all stable factors of \(F\) are either spherical or semi-rigid, and only one stable factor is semi-rigid \cite[Proposition~2.9]{huy.mac.ste:08}.
   The only spherical object, up to shift, is \(\mathcal{O}_X\).
-  By \Cref{lem:semistable-semirigid}, the only semi-stable semi-rigid objects, up to shift, are \(\mathbf{k}_x\) and \(T^{-1} \mathbf{k}_x\).
-  In particular, the phases of the HN factors of \(F\) lie in the discrete subset of \(\mathbf{R}\) given by \[\left(\phi_{\sigma}(\mathcal{O}_X) + \mathbf{Z} \right) \cup \left(\phi_{\sigma}(\mathbf{k}_x) + \mathbf{Z} \right) \cup \left(\phi_{\sigma}(T^{-1}\mathbf{k}_x) + \mathbf{Z}\right).\]
+  By \Cref{lem:semistable-semirigid}, the only semi-stable semi-rigid objects, up to shift, are \(\mathbf{k}_x\) and \(T \mathbf{k}_x\).
+  In particular, the phases of the HN factors of \(F\) lie in the discrete subset of \(\mathbf{R}\) given by \[\left(\phi_{\sigma}(\mathcal{O}_X) + \mathbf{Z} \right) \cup \left(\phi_{\sigma}(\mathbf{k}_x) + \mathbf{Z} \right) \cup \left(\phi_{\sigma}(T^{1}\mathbf{k}_x) + \mathbf{Z}\right).\]
   Therefore, there exists a discrete \(\Phi \subset \mathbf{R}\) such that for every semi-rigid object \(F\), we have \[\phi^+(F) - \phi^-(F) \in \Phi.\]
 
   If \(F\) itself is semi-stable, we simply take \(n = 0\).
-  Otherwise, up to shift, a stable HN factor of \(F\) of highest or lowest phase must be \(\mathcal{O}_X\).
-  We apply \cite[Theorem~3.5]{bap.deo.lic:23} with \(Y = F\) and \(X = \mathcal{O}_X\).
+  Otherwise, for some \(i \in \mathbf{Z}\), a stable HN factor of \(F\) of highest or lowest phase must be \(\mathcal{O}_X[i]\).
+  We apply \Cref{thm:algorithm} with \(y = F\) and \(x = \mathcal{O}_X[i]\).
   Then for \(F' = T F\) or \(F' = T^{-1} F\), we have
   \[ \phi^+(F') - \phi^-(F') < \phi^{+}(F) - \phi^{-1}(F).\]
-  By repeated applications of \cite[Theorem~3.5]{bap.deo.lic:23} and using that \(\phi^+ - \phi^-\) lies in the discrete set \(\Phi \subset \mathbf{R}\), we conclude that there exists an integer \(n\) such that \(T^nF\) is semi-stable.
+  By repeated applications of \Cref{thm:algorithm} and using that \(\phi^+ - \phi^-\) lies in the discrete set \(\Phi \subset \mathbf{R}\), we conclude that there exists an integer \(n\) such that \(T^nF\) is semi-stable.
 \end{proof}
 
 Having proved the two lemmas, we are ready to prove \Cref{prop:semirigids}---the only semi-rigid objects of \(D^b(X)\), up to twisting by \(\mathcal{O}_X\) and shifting, are the skyscraper sheaves \(\mathbf{k}_x\).
@@ -493,19 +507,20 @@ We now have the tools to describe the mass map
 
   Part (2) follows from \Cref{prop:HNII}.
 
-  For part (3), let \(\Delta \subset \mathbf{P}^2\) be the set of points \([a:b:c]\) that satisfy the conditions in \eqref{eqn:triangleineqs}.
+  For part (3), note that \(\mathbf{P}W_- \to \Delta_0\) is continuous, so we must exhibit a continuous inverse.
+  Let \(\Delta \subset \mathbf{P}^2\) be the set of points \([a:b:c]\) that satisfy the conditions in \eqref{eqn:triangleineqs}.
   Then we have a homeomorphism \(\Delta \to \Delta_0\) given by
   \[ [a:b:c] \mapsto [\cdots:a+2c:a+c:a:b:b+c:b+2c:\cdots].\]
   We use \([a:b:c] \in \Delta\) as coordinates on \(\Delta_0\).
   By \Cref{prop:chart}, the map \(w \mapsto \sigma_w\) gives a homeomorphism \(-\mathbf{H} \to \mathbf{P} W_{-}\).
   We use \(w \in -\mathbf{H}\) as a coordinate on \(\mathbf{P} W_-\).
-  In these coordinates, writing down the inverse map \(\omega \colon \Delta \to \mathbf{P}W_-\) amounts to re-constructing the central charge given \(a,b,c\).
+  In these coordinates, writing down the inverse map \(\omega \colon \Delta_{0} \to \mathbf{P}W_-\) amounts to re-constructing the central charge given \(a,b,c\).
   This can be done using the cosine rule (see \Cref{fig:cosrule}).
   Precisely, we have
   \begin{equation}\label{eqn:inv-}
     \omega([a:b:c]) = - (b/a \exp(i \theta) - 1), \text{ where } \theta = \arccos \left( \frac{a^2+b^2-c^2}{2ab} \right) \in (0,\pi),
   \end{equation}
-  which is continuous.
+  which is the desired continuous inverse.
   \end{proof}
 \begin{figure}[ht]
   \centering
@@ -641,28 +656,27 @@ Let \(\overline D \subset \mathbf{P}^S\) be the closure of \(D\).
 Our next goal is to identify the homeomorphism classes of \(\overline D\) and \(D\).
 To do so, it will be useful to work with an auxiliary space, which we now define.
 
-Let \(I  \subset \mathbf{P^1}\) be the set of \([v:w]\) where \(v, w\) are non-negative real numbers.
+Let \(I  \subset \mathbf{P}^{1}\) be the set of \([v:w]\) where \(v, w\) are non-negative real numbers.
 Then \(I\) is homeomorphic to a closed interval.
 Let \(\overline {\mathbf{R}} = \mathbf{R} \cup \{\pm \infty\}\) be the two point compactification of \(\mathbf{R}\), also homeomorphic to a closed interval.
 Our auxiliary space will be \(\overline{\mathbf{R}} \times I\).
 
 Define the transformation \(T\) on \(\overline{\mathbf{R}} \times I\) by
 \[ T \colon (u,[v,w]) \mapsto (u+1,[v:w]).\]
-Recall that we also denote by \(T\) the action of the spherical twist by \(\mathcal{O}_X\) on \(\mathbf{P} \operatorname{Stab}(X)\) and the rightward shift by \(1\) on \(\mathbf{P}^S\).
+Recall that we also denote by \(T\) the action of the spherical twist by \(\mathcal{O}_X\) on \(\mathbf{P} \operatorname{Stab}(X)\) and the rightward shift by \(1\) on \(\mathbf{R}^S\) and \(\mathbf{P}^S\).
 (We intentionally use the same letter \(T\) to denote these maps, which are related.)
 Our eventual goal is to understand \(\overline D\) via a \(T\)-equivariant parametrisation
 \[ \pi \colon \overline{\mathbf{R}} \times I \to \overline D.\]
-
 For \(n \in \mathbf{Z}\), set
 \[ P_n = (\cdots , 2 , 1,  0 , 1 , 2 , \cdots) \in \mathbf{R}^S,\]
 where the \(0\) is at index \(n\).
 Note that \(P_n = T^nP_0\).
 Set
 \[ Q = (\cdots , 1, 1, 1, \cdots ) \in \mathbf{R}^S.\]
-Observe that \(P_{-1}, P_{0}\), and \(Q\) are the three vertices of the closure \(\overline{\Delta}_0\) of the triangle \(\Delta_0 \subset \mathbf{P}^S\), which is the homeomorphic image of \(\mathbf{P}W_-\).
-The three sides of  \(\overline{\Delta}_0\) are the line segments \(P_{-1}P_0\), \(P_{-1}Q\), and \(P_0 Q\).
+Observe that \(P_{0}, P_{1}\), and \(Q\) are the three vertices of the closure \(\overline{\Delta}_0\) of the triangle \(\Delta_0 \subset \mathbf{P}^S\), which is the homeomorphic image of \(\mathbf{P}W_-\).
+The three sides of  \(\overline{\Delta}_0\) are the line segments \(P_{0}P_1\), \(P_{0}Q\), and \(P_1 Q\).
 The open line segment \(P_0Q\) is the homeomorphic image of \(\mathbf{P}W_0\).
-The entire picture is \(T\)-invariant, so the discussion above holds with \(-1,0,1\) replaced by \(n-1,n,n+1\) for any \(n \in \mathbf{Z}\).
+The entire picture is \(T\)-invariant, so the discussion above holds with \(0\) and \(1\) replaced by \(n\) and \(n+1\) for any \(n \in \mathbf{Z}\).
 
 Consider the map \(\pi \colon [0,1] \times I \to \mathbf{P}^S\) defined by
 \[ \pi(u,[v:w]) = (1-u)(wQ + vP_0) + u (wQ + vP_1).\]
@@ -679,9 +693,9 @@ Explicitly, for \(x = n + u\), where \(n \in \mathbf{Z}\) and \(u \in [0,1)\), w
 \[ \pi(x,[v:w]) = w Q + (1-u) v P_n + uvP_{n+1}.\]
 Note that in \(\mathbf{R}^S\) we have
 \[ \lim_{n \to \pm\infty} \frac{1}{n}P_n = (\cdots, 1, 1, 1, \cdots).\]
-Extend \(\pi\) to \(\{\pm \infty\} \times I\) by setting
+We extend \(\pi\) to \(\{\pm \infty\} \times I\) by setting
 \[ \pi(\pm \infty, [v:w]) = [\cdots : 1 : 1 : 1 : \cdots].\]
-Then, using the limit computation above, it is easy to check that \(\pi_q\) is continuous.
+Then, using the limit computation above, we see that \(\pi\) is continuous on \(\overline{\mathbf{R}} \times I\).
 \begin{theorem}\label{prop:pi}
   The map \(\pi \colon \overline{\mathbf{R}} \times I \to \mathbf{P}^S\) is continuous.
   It sends the set \[C = \{\pm \infty\} \times I \cup \overline{\mathbf{R}} \times \{[0:1]\}\]
@@ -730,9 +744,9 @@ See \Cref{fig:accordion} for a sketch.
     \draw (3.5,0) edge [->] (S);
     \draw (1.5,-5) edge [->] node[above] {\(\sim\)} (S);
   \end{tikzpicture}
-  \caption{The map \(\pi \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\) induces a homeomorphism from a closed disk \(B\) onto the closure of the image of \(\operatorname{Stab}(X)\).
+  \caption{The map \(\pi \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\) induces a homeomorphism from a closed disk \(B\) onto the closure of the image of \(\mathbf{P}\operatorname{Stab}(X)\).
     The disk \(B\) is obtained from the square \(\overline{\mathbf{R}} \times [0,1]\) by collapsing three sides (red).
-    The \(\mathbf{Z}\)-indexed decomposition of the image into triangles corresponds to the translates of a fundamental domain of \(\mathbf{P}\operatorname{Stab}(X)\) by the spherical twist \(T\).
+    The \(\mathbf{Z}\)-indexed set of triangles tiling the image is the set of translates of the fundamental domain \(\overline{\mathbf{P}W_-}\) by the spherical twist \(T\).
   }
   \label{fig:accordion}
 \end{figure}
@@ -756,108 +770,107 @@ The fact that \(\textcolor{red}{\bullet}\) is in the boundary is a reflection of
 
 The point \(\textcolor{red}{\bullet}\) also has an interpretation as the mass function of a lax stability condition in the sense of Broomhead, Pauksztello, Ploog, and Woolf \cite{bro.pau.plo.ea:22}.
 We quickly recall the main features of the definition.
-A \emph{lax stability condition} is a slicing \(P\) and a compatible central charge \(Z\).
+A \emph{lax pre-stability condition} consists of a slicing \(P\) and a compatible central charge \(Z\).
 The central charge is allowed to vanish on the classes of non-zero semi-stable objects (such objects are called ``massless'').
-The pair \((P,Z)\) must satisfy the following two finiteness conditions:
-\begin{enumerate}
-\item The slicing \(P\) is locally finite.
-\item The central charge satisfies the support property.
-  That is, for a choice of a norm \(\|-\|\) on \(\mathcal{N}(X)\), there exists a positive constant \(c\) such that for every massive stable object \(s\), we have \(|Z(s)|/\|s\| > c\).
-\end{enumerate}
-A pair \((P,Z)\) that satisfies the first condition is called a \emph{lax pre-stability condition}.
+A lax pre-stability condition is a \emph{stability condition} if it also satisfies the support property for massive stable objects.
+That is, if there exists a choice of norm \(\|-\|\) on \(\mathcal{N}(X)\) and a positive constant \(c\) such that for every massive stable object \(s\), we have \(|Z(s)|/\|s\| \geq c\).
+Given a lax pre-stability condition \(\sigma\) and an object \(x\), the mass of \(x\) with respect to \(\sigma\) is, as before, the sum \(\sum |Z_{\sigma}(x_i)|\) over the masses of HN pieces \(x_i\) of \(x\).
 
 Recall that \(\mathcal{A}\) is the tilt of \(\operatorname{Coh} X\) in the torsion pair defined by torsion and torsion-free sheaves.
 We let \(P\) to be the slicing defined by \(P(1) = \mathcal{A}\) and \(P(\phi) = 0\) for \(\phi \in (0,1)\).
-The simple objects of \(P(1)\) are the skyscraper sheaves \(\mathbf{k}_x\) and the objects \(E[1]\), where \(E\) is a vector bundle of rank on \(X\) with no non-trivial sub-bundles (see \cite[Remark~4.3 (iii)]{huy.mac.ste:08}).
+The simple objects of \(P(1)\) are the skyscraper sheaves \(\mathbf{k}_x\) and the objects \(E[1]\), where \(E\) is a vector bundle on \(X\) with no non-trivial sub-bundles (see \cite[Remark~4.3 (iii)]{huy.mac.ste:08}).
 We let \(Z(\mathcal{O}_X) = 0\) and \(Z(\mathbf{k}_x) = -1\).
 \begin{proposition}\label{prop:red}
-  The pair \((P,Z)\) as above defines a lax stability condition \(\sigma\) that is a limit of standard stability conditions.
-  Furthermore, \(m(\sigma) = [\cdots : 1 : 1: 1 : \cdots]\).
+  The pair \((P,Z)\) as above defines a lax stability condition \(\sigma\) such that \[m(\sigma) = [\cdots : 1 : 1: 1 : \cdots] \in \mathbf{P}^S.\]
+  Furthermore, \(\sigma\) is a limit of standard stability conditions.
 \end{proposition}
 \begin{proof}
   It is easy to check that the abelian category \(\mathcal{A}\) is of finite length (Noetherian and Artinian).
   So the slicing is locally finite.
+  We now check the support property.
   Let \(E\) be a vector bundle with no non-trivial sub-bundles, and let \([E] = r[\mathcal{O}_X] + m[\mathbf{k}_x]\).
   Then \(r = \rk E\) and \(Z(E) = -m\).
   Assume that \(E\) is not isomorphic to \(\mathcal{O}_X\).
   Then \(\Hom(\mathcal{O}_X, E) = \Hom(E, \mathcal{O}_X) = 0\).
   So \[0 \geq \chi(\mathcal{O}_X, E) = 2r+m,\]
   and hence \(m \leq -2r\).
-  As a result, with the norm on \(\mathcal{N}(X)\) in which \([\mathcal{O}_X]\) and \([\mathbf{k}_x]\) form an orthonormal basis, we see that \[|Z(E)|/\|E\| \geq \frac{|m|}{\sqrt{r^2+m^2}} \geq \frac{2}{\sqrt 5}.\]
+  With the norm on \(\mathcal{N}(X)\) in which \([\mathcal{O}_X]\) and \([\mathbf{k}_x]\) form an orthonormal basis, we see that \[|Z(E)|/\|E\| \geq \frac{|m|}{\sqrt{r^2+m^2}} \geq \frac{2}{\sqrt 5}.\]
   So the support property holds.
 
-  Finally, note that \(\sigma\) is the limit of the stability conditions in \(\mathbf{P}W_0\) as \(Z(\mathcal{O}_{X})/Z(\mathbf{k}_x)\) approaches \(0\).
-  Since \(m_{\sigma}(T^n \mathbf{k}_x) = 1\), the last equality follows.
+  The HN filtrations with respect to \(\sigma\) are the same as the HN filtrations with respect to a stability condition in \(\mathbf{P}W_0\).
+  So the mass equality follows from \Cref{prop:HN0}.
+
+  Finally, note that \(\sigma\) is the limit of stability conditions in \(W_0\) as \(Z(\mathcal{O}_{X})/Z(\mathbf{k}_x)\) approaches \(0\).
 \end{proof}
 
 Consider the points \(P_n\) of \(\overline D\).
 These are the vertices of the tiling triangles other than the vertex \(\textcolor{red}{\bullet}\).
 They form a single \(T\)-orbit, so it suffices to focus on one of them, say \(P_0 = [\cdots : 2:1:0:1:2: \cdots]\), with the \(0\) at index \(0\).
 Note that this is the common vertex, other than \(\textcolor{red}{\bullet}\), of the triangles \(\mathbf{P}W_{+} \cong \Delta_{-1}\) and \(\mathbf{P}W_- = \Delta_0\).
-This is the mass function of a lax pre-stability condition, which does not satisfy the support property.
+This turns out to be the mass function of a lax pre-stability condition that does not satisfy the support property.
 Let \(P\) be the same slicing as before, and set \(Z(\mathcal{O}_X) = 1\) and \(Z(\mathbf{k}_x) = 0\).
 \begin{proposition}\label{prop:v0}
-  The pair \((P,Z)\) as above defines a lax pre-stability condition \(\tau\) that is a limit of standard stability conditions and \(m(\tau) = [\cdots : 2: 1 : 0: 1 : 2: \cdots]\).
-  However, \(\tau\) does not satisfy the support property.
+  The pair \((P,Z)\) as above defines a lax pre-stability condition \(\tau\) with
+\[m(\tau) = [\cdots : 2: 1 : 0: 1 : 2: \cdots].\]
+  The lax pre-stability condition \(\tau\) is a limit of standard stability conditions, and it does not satisfy the support property.
 \end{proposition}
 \begin{proof}
   Since \(\mathcal{A}\) is of finite length, the slicing is locally finite.
   So \(\tau\) is a lax pre-stability condition.
-  It is easy to check that \(m_{\tau}(T^{n} \mathbf{k}_x) = |n|\).
-  Note that \(\tau\) is the limit of stability conditions in \(\mathbf{P}W_0\) as \(Z(\mathcal{O}_X)/Z(\mathbf{k}_x)\) approaches \(-\infty\).
+  The mass equality again follows from \Cref{prop:HN0}.
+  Note that \(\tau\) is the limit of stability conditions in \(W_0\) as \(Z(\mathcal{O}_X)/Z(\mathbf{k}_x)\) approaches \(-\infty\).
 
-  To see that the support property fails for \(\tau\), recall that the simple objects of \(\mathcal{A}\) are the skyscraper sheaves \(\mathbf{k}_x\) and shifts by 1 of vector bundles with non-trivial sub-bundles.
+  To see that the support property fails for \(\tau\), recall that the simple objects of \(\mathcal{A}\) are the skyscraper sheaves \(\mathbf{k}_x\) and shifts by 1 of vector bundles with no non-trivial sub-bundles.
   The skyscraper sheaves are massless, and hence do not obstruct the support property.
-  On the other hand, for a fixed integer \(r \geq 2\) and sufficiently large \(c_2\) (depending on \(r\)), there exist vector bundles \(E\) of rank \(r\) on \(X\) with no-nontrivial sub-bundles and \(c_2(E) = c_2\) (see \cite[Th\'eo\`eme~5.3]{ban.le-pot:87}).
-  For such a vector bundle \(E\), we have \(Z_{\tau}(E) = r\) but the norm of \([E] = (r, r-c_2)\) may be arbitrarily large.
-  So \(|Z(E)|/\|E\|\) is not bounded below by any positive constant.
+  However, for a fixed integer \(r \geq 2\) and sufficiently large \(m\) (depending on \(r\)), there exist vector bundles \(E\) of rank \(r\) on \(X\) with no non-trivial sub-bundles and \(c_2(E) = m\) (see \cite[Th\'eor\`eme~5.3]{ban.le-pot:87}).
+  For such a vector bundle \(E\), we have \(Z_{\tau}(E) = r\) and \([E] = r [\mathcal{O}_X] + m [\mathbf{k}_x]\).
+  By making \(m\) arbitrarily large, we can make \(|Z(E)|/\|E\|\) arbitrarily close to \(0\).
 \end{proof}
 
 
-Finally, consider a point on the open line segment joining \(v_{0}\) and \(v_{1}\).
+Finally, consider a point on the open line segment joining \(P_{0}\) and \(P_{1}\).
 This point is in the closure of \(\mathbf{P}W_- = \Delta_0\).
 We claim that it is \emph{not} the mass function of a lax pre-stability condition arising as a limit of stability conditions \(W_-\).
 
 To see this, it is helpful to consider a handful of other semi-stable objects.
 Let \(n \geq m\) be positive integers.
-Let \(x_1, \dots, x_n \in X\) be distinct points, and set \(S = \{x_1, \dots, x_n\}\).
-We say that a morphism \( \pi \colon \mathcal{O}_X^{\oplus m} \to \mathcal{O}_S\) is \emph{generic} if for every subset \(T \subset S\), the induced map on global sections
+Let \(x_1, \dots, x_n \in X\) be distinct points, and set \(R = \{x_1, \dots, x_n\}\).
+We say that a morphism \( \pi \colon \mathcal{O}_X^{\oplus m} \to \mathcal{O}_R\) is \emph{generic} if for every subset \(T \subset R\), the induced map on global sections
 \[ H^0(\mathcal{O}_X^{\oplus m}) \to H^0(\mathcal{O}_T)\]
 has maximal rank, namely \(\min(m, |T|)\).
 
-For some \(w \in -\mathbf{H}\), let \(\sigma = \sigma_w\) be the corresponding standard stability condition.
+Let \(\sigma \in W_-\) be a standard stability condition.
 Let \(I_{m,n}\) be the kernel of a generic morphism from \(\mathcal{O}_X^{\oplus m}\) to the structure sheaf of \(n\)-points.
 Then it is easy to check that \(I_{m,n}\) is \(\sigma\)-stable.
 
-Fix a point \(p \in \overline D\) on the line segment joining \(v_0\) and \(v_1\).
+Fix a point \(p \in \overline D\) on the line segment joining \(P_0\) and \(P_1\).
 Then, for some \(t > 0\), we can write
 \[ p = [ \cdots : 2 + t: 1: t : 1+2t : \cdots].\]
-If we take a sequence of standard stability conditions in \(W_{-}\) whose mass function approaches \(p\), their slicings do not converge.
-Therefore, there is no limiting lax pre-stability condition with the mass function \(p\).
-We now make this precise.
+Take a sequence of standard stability conditions in \(W_{-}\) whose mass function approaches \(p\).
+We claim that the sequence of slicings does not converge.
 
-Recall that the topology on the space of slicings is induced by the metric \(d\) defined as follows.
+To see this, recall that the topology on the space of slicings is induced by the metric \(d\) defined as follows.
 For a slicing \(P\) and non-zero object \(c\), let \(\phi^{\pm}_P(c)\) denote the highest/lowest phase of the \(P\)-HN factors of \(c\).
 Then the distance \(d(P,Q)\) between two slicings \(P\) and \(Q\) is
 \[ d(P,Q) = \operatorname{sup}_{c \neq 0}\left\{ \max(|\phi_{P}^+(c) - \phi_{Q}^+(c)|, |\phi^-_P(c) - \phi^-_Q(c)|)\right\}.\]
-Suppose \(\sigma\) is a lax stability condition that is a limit of a sequence of standard stability conditions \(\sigma_w\) for \(w \in -\mathbf{H}\) with \(m(\sigma) = p\).
-Then, possibly after a rotation and scaling, the central charge of \(\sigma\) must send \(\mathbf{k}_x\) to \(-1\) and \(\mathcal{O}_X\) to \(-1-t\).
+Suppose \(\tau\) is a lax stability condition that is a limit of a sequence of standard stability conditions in \(W_-\) with \(m(\tau) = p\).
+Then \(\mathbf{k}_x\) and \(\mathcal{O}_X\) must be \(\tau\)-semi-stable.
+Possibly after a rotation and scaling, we may assume that the central charge of \(\tau\) sends \(\mathbf{k}_x\) to \(-1\) and \(\mathcal{O}_X\) to \(-1-t\).
 But then
-\[ Z(I_{m,n}) = mZ(\mathcal{O}_X) - n Z(\mathbf{k}_x) = n - m(1+t).\]
-It follows that for for every \((n,m)\) with \(n/m > (1+t)\), the sheaf \(I_{m,n}\) is \(\sigma\)-semi-stable of phase \(0\) and for \(n/m < (1+t)\), it is \(\sigma\)-semi-stable of phase \(1\).
+\[ Z_{\tau}(I_{m,n}) = mZ_{\tau}(\mathcal{O}_X) - n Z_{\tau}(\mathbf{k}_x) = n - m(1+t).\]
+It follows that for for every \((n,m)\) with \(n/m > (1+t)\), the sheaf \(I_{m,n}\) is \(\tau\)-semi-stable of phase \(0\) and for \(n/m < (1+t)\), it is \(\tau\)-semi-stable of phase \(1\).
 But this is absurd.
-Indeed, for a standard stability condition \(\sigma_w\), we have
-\[ \inf_{n/m > 1+t} \phi_{\sigma}(I_{n,m}) = \sup_{n/m < 1+t} \phi_{\sigma}(I_{n,m}),\]
+Indeed, for a standard stability condition \(\sigma \in W_-\), we have
+\[ \sup_{n/m > 1+t} \phi_{\sigma}(I_{n,m}) = \inf_{n/m < 1+t} \phi_{\sigma}(I_{n,m}),\]
 so the same equality must hold in the limit.
 
-In summary, we see three distinct kinds of limit points in the boundary from the point of view of lax stability conditions:
+In summary, we see three kinds of behaviours on the boundary from the point of view of lax stability:
 \begin{enumerate}
 \item The object \(\mathcal{O}_X\) can become massless in a lax stability condition, leading to the limit mass function \(Q\).
 \item The objects \(\mathbf{k}_x\) and \(I_x = T \mathbf{k}_x[-1]\) can become massless in a lax pre-stability condition, leading to the limit mass functions \(P_0\) and \(P_{1}\).
  \item Other semi-stable sheaves (for example, \(I_{m,n}\)) cannot become massless in lax pre-stability conditions.
 \end{enumerate}
-
-This trichotomy is consistent with the density of the phase diagram (see the discussion in \cite[\S~12]{bro.pau.plo.ea:22}).
+This trichotomy is consistent with the density of the phase diagram (discussed also in \cite[\S~12]{bro.pau.plo.ea:22}).
 Let \(\sigma \in W_-\) be a standard stability condition.
 It is easy to check that the classes \(r [\mathcal{O}_X] + n [\mathbf{k}_x]\) that support semi-stable sheaves are precisely
 \(r = 0\) and \(n \geq 1\); or \(r \geq 1\) and \(n = 0\); or \(r \geq 1\) and \(-n \geq r\) (see \Cref{fig:semistables}).
@@ -889,7 +902,7 @@ But if the central charge vanishes on a point on the open arc from \(\mathbf{k}_
 
 \section{The \(q\)-mass embedding}\label{sec:qmass}
 Fix a positive real number \(q\).
-Given a stability condition \(\sigma\) and an object \(x\), recall that the \(q\)-mass of \(x\) with respect to \(\sigma\) is defined by
+Given a stability condition \(\sigma\) and an object \(x\), the \(q\)-mass of \(x\) with respect to \(\sigma\) is defined by
 \[ m_{q, \sigma}(x) = \sum |Z_{\sigma}(x_i)| q^{\phi(x_i)},\]
 where the sum is taken over the \(\sigma\)-HN factors \(x_i\) of \(x\), and \(\phi(x_i)\) is the phase of \(x_i\).
 We have the map
@@ -910,7 +923,7 @@ the positive real numbers \(a,b,c\) satisfy the \(q\)-triangle inequalities
 From the \(\sigma\)-HN filtration of \(T^n\mathbf{k}_x\) from \Cref{prop:HNII}, we get
 \[ m_{q, \sigma} \colon T^n \mathbf{k}_x \mapsto
   \begin{cases}
-    a + cq^{-n}+ \cdots + c q^{2} &\text{for \(n \leq -2\),}\\
+    a + cq^{-n}+ \cdots + c q^{1} &\text{for \(n \leq -1\),}\\
     a &\text{for \(n = 0\),}\\
     b & \text{for \(n = 1\),}\\
     b + c q^0 + \cdots + c q^{-n+2} & \text{for \(n \geq 2\)}.
@@ -927,10 +940,10 @@ The proof is analogous to the proof of \Cref{prop:triangle0}~(3), but uses the \
 
 Consider \(\sigma \in \mathbf{P}W_0\).
 With \(a,b,c\) as before, we have \(b = a + qc\).
-From the \(\sigma\)-HN filtration of \(T^n\mathbf{k}_x\) from \Cref{prop:HNII}, we get
+From the \(\sigma\)-HN filtration of \(T^n\mathbf{k}_x\) from \Cref{prop:HN0}, we get
 \[ m_{q, \sigma} \colon T^n \mathbf{k}_x \mapsto
   \begin{cases}
-    a + cq^{-n}+ \cdots + c q^{2} &\text{for \(n \leq -2\),}\\
+    a + cq^{-n}+ \cdots + c q^{1} &\text{for \(n \leq -1\),}\\
     a &\text{for \(n = 0\),}\\
     a + cq + \cdots + c q^{-n+2} & \text{for \(n \geq 1\)}.
   \end{cases}
@@ -957,7 +970,7 @@ Recall that \(I  \subset \mathbf{P^1}\) is the set of \([v:w]\) where \(v, w\) a
 Let \(\overline {\mathbf{R}} = \mathbf{R} \cup \{\pm \infty\}\) be the two point compactification of \(\mathbf{R}\).
 Define the transformation \(T\) on \(\overline{\mathbf{R}} \times I\) by
 \[ T \colon (u,[v,w]) \mapsto (u+1,[qv:w]).\]
-Recall that we also denote by \(T\) the action of the spherical twist by \(\mathcal{O}_X\) on \(\mathbf{P} \operatorname{Stab}(X)\) and the rightward shift by \(1\) on \(\mathbf{P}^S\).
+Recall that we also denote by \(T\) the action of the spherical twist by \(\mathcal{O}_X\) on \(\mathbf{P} \operatorname{Stab}(X)\) and the rightward shift by \(1\) on \(\mathbf{R}^S\) and \(\mathbf{P}^S\).
 
 We define a \(T\)-equivariant parametrisation
 \[ \pi_q \colon \overline{\mathbf{R}} \times I \to \overline D_q,\]
@@ -970,7 +983,7 @@ Set
 \[ Q = (\cdots , 1, 1, 1, \cdots ) \in \mathbf{R}^S.\]
 Consider the map \(\pi_{q} \colon [0,1] \times I \to \mathbf{P}^S\) defined by
 \[ \pi_q(u,[v:w]) = (1-u)(wQ + vP_0) + u (wQ + q^{-1}vP_1).\]
-Note that for \(u = 0\) (resp. \(u = 1\)), the map \(\pi_q\) is a homeomorphism onto the closure of \(I_0\) (resp. \(I_1\)), which are the two sides of the triangle \(\Delta_0\).
+Note that for \(u = 0\) (resp. \(u = 1\)), the map \(\pi_q\) is a homeomorphism onto the closure of \(I_0\) (resp. \(I_1\)), which are the two sides of the triangle \(\overline{\Delta}_0\).
 For \(0 < u < 1\), the map \(\pi_q\) linearly interpolates between the two end-points \(\pi_q(0,[v:w])\) and \(\pi_q(1,[v:w])\), and hence its image is \(\overline \Delta_0\).
 Also observe that \(\pi_q(u,[0:w]) = Q\).
 Furthermore, with the \(T\) actions as before, we have
@@ -987,10 +1000,10 @@ Extend \(\overline \pi_q\) to \(\{\pm \infty\} \times I\) by setting
 \[ \pi_q(-\infty, [v:w]) = [\cdots : 1 : 1 : 1 : \cdots],\]
 and
 \[ \pi_q(+\infty, [v:w]) = w [\cdots : 1 : 1 : 1 : \cdots] + v [\cdots : q : 1 : q^{-1} : \cdots].\]
-Using the limit computation above, it follows that this extension is continuous.
+Using the limit computation above, it follows that this extension is continuous on \(\overline{\mathbf{R}} \times I\).
 \begin{theorem}\label{prop:q-pi}
   The map \(\pi_{q} \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\) is continuous.
-  It sends the set \[C = \{- \infty\} \times [0,1] \cup \overline{\mathbf{R}} \times \{0\}\]
+  It sends the set \[C = \{- \infty\} \times I \cup \overline{\mathbf{R}} \times \{[0:1]\}\]
   to the point \([\cdots: 1: 1: 1: \cdots]\).
   Let \(\overline{\mathbf{R}} \times [0,1] \to B\) be the contraction of \(C\) to a point.
   Then the induced map \(\pi_{q} \colon B \to \mathbf{P}^S\) is a homeomorphism onto \(\overline D_q = \overline{m_{q}(\mathbf{P}\operatorname{Stab}(X))}\).
@@ -1030,7 +1043,7 @@ See \Cref{fig:q-accordion} for a sketch.
     \draw (3.5,0) edge [->] (S);
     \draw (1.5,-5) edge [->] node[above] {\(\sim\)} (S);
   \end{tikzpicture}
-  \caption{The map \(\pi_{q} \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\) induces a homeomorphism from a closed disk \(B\) onto the closure of the image of \(\operatorname{Stab}(X)\) under the \(q\)-mass map.
+  \caption{The map \(\pi_{q} \colon \overline{\mathbf{R}} \times [0,1] \to \mathbf{P}^S\) induces a homeomorphism from a closed disk \(B\) onto the closure of the image of \(\mathbf{P}\operatorname{Stab}(X)\) under the \(q\)-mass map.
     The disk \(B\) is obtained from the square \(\overline{\mathbf{R}} \times [0,1]\) by collapsing two sides (red).
   }
   \label{fig:q-accordion}
@@ -1038,23 +1051,23 @@ See \Cref{fig:q-accordion} for a sketch.
 
 Instead of a unique \(T\)-fixed point of \(\overline D_q\), as was the case for \(q = 1\), for \(q \neq 1\) we have two such points.
 These are the blue and red end-points of the blue interval in \Cref{fig:q-accordion}.
-The blue end-point is the point \(\textcolor{blue}{\bullet} = [\cdots : q : 1 : q^{-1} : \cdots : ]\).
+The blue end-point is the point \(\textcolor{blue}{\bullet} = [\cdots : q : 1 : q^{-1} : \cdots  ]\).
 It is the \(q\)-hom function \(\hom_q(\mathcal{O}_X, -)\), whose value on \(T^n\mathbf{k}_x\) is
 \[ \dim_q \Hom^{*}(\mathcal{O}_X, T^n \mathbf{k}_x) = q^{-n}.\]
 (By definition, \(\dim_q\) of the graded vector space \(\mathbf{C}[m]\) is \(q^m\)).
-Again, the fact that \(\hom_q(\mathcal{O}_X,-)\) appears in the closure of the \(q\)-mass embedding of the stability manifold is a reflection of a general theorem---the \(q\)-analogue of \Cref{thm:qhom} (see \cite[Corollary~4.13]{bap.deo.lic:20}).
+Again, the fact that \(\hom_q(\mathcal{O}_X,-)\) appears in the closure of the \(q\)-mass embedding is a reflection of a general theorem---the \(q\)-analogue of \Cref{thm:qhom} (see \cite[Corollary~4.13]{bap.deo.lic:20}).
 
 Note that \(\textcolor{blue}{\bullet}\) is not in the closure of the standard stability conditions \(\mathbf{P}W\), nor is it in the closure of \(T^n \mathbf{P}W\) for any fixed \(n\).
 To reach \(\textcolor{blue}{\bullet}\), we must traverse an infinite sequence of hearts.
-It is easy to see that it is not the \(q\)-mass function of a lax stability condition.
+It is not the \(q\)-mass function of a lax pre-stability condition.
 
 The red end-point is the point \(\textcolor{red}{\bullet} = [\cdots : 1 : 1 : 1 : \cdots]\).
 It is the \(q\)-mass function of the lax stability condition \(\sigma\) from \Cref{prop:red}.
 
 The other vertices of the triangles form one orbit, and are \(q\)-mass functions of lax pre-stability conditions.
-For example, the vertex \(v_0 = [ \cdots: 1+q : 1 : 0 : 1 : 1+q^{-1} : \cdots ]\) is the \(q\)-mass function of the lax pre-stability condition \(q^{-1} \cdot \tau\) where \(\tau\) is as in \Cref{prop:v0}.
+For example, the vertex \(P_0 = [ \cdots: 1+q : 1 : 0 : 1 : 1+q^{-1} : \cdots ]\) is the \(q\)-mass function of the lax pre-stability condition \(\tau\) from \Cref{prop:v0}.
 
 
-\bibliographystyle{amsplain}
+\bibliographystyle{amsalpha}
 \bibliography{/home/anand/Documents/bibliography/math.bib}
 \end{document}
